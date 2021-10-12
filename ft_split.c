@@ -33,6 +33,8 @@ Divide [s1] en varios strings, usando [c] como punto de corte
 */
 
 
+
+
 size_t		get_cnt(char const *s, char c)
 {
 	size_t		cnt;

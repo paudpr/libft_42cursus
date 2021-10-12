@@ -1,6 +1,7 @@
 #include "libft.h"
 
 /*
+Elimina y libera cada uno de los elementos de la lista dada
 
 */
 

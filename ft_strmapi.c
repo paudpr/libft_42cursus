@@ -12,40 +12,29 @@
 ** ·!) Hacemos uso de la función "malloc" gracias a la librería <stdlib.h>
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
+//haceer
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	char	*new_s;
+	int i;
+	char *s2;
 
 	if (!s)
-		return (NULL);
-	new_s = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!new_s)
-		return (NULL);
+		return (0);
+	s2 = (char *)malloc((sizeof(char) * ft_strlen(s)) + 1);
+	if (s2 == 0)
+		return (0);
 	i = 0;
 	while (s[i])
-	{
-		new_s[i] = (*f)(i, s[i]);
+	{	
+		s2[i] = (*f)(i, s[i]);
 		i++;
 	}
-	new_s[i] = '\0';
-	return (new_s);
+	s2[i] = '\0';
+	return(s2);
 }
 
-*/
+//allocate memory adding an extra space for final character
+//si no haces esto sale error; your strmapi does not allocate the good size so th \0
+//test may be false

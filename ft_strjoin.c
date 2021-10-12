@@ -39,7 +39,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 
 
-
+//not protected
 
 /*
 #include "libft.h"

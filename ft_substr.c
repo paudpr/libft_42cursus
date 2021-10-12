@@ -9,6 +9,7 @@ Copia una string [s] desde un índice [start] con longitud máxima de [len]
 
 */
 
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*t;
@@ -18,50 +19,23 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (0);
 	n = ft_strlen(s);
+	if (n < len)
+		len = n;
+	t = malloc(sizeof(char) * (len +1));
+	if (t == NULL)
+		return (t);
+	i = 0;
 	if (n < start)
 	{
-		t = (char *)malloc(sizeof(char) * 1);
-		if (t == 0)
-			return (0);
-		t[0] = '\0';
-		return (t);
+		t[i] = 0;
+		return(t);
 	}
-	t = (char *)malloc(sizeof(char) * (1 * n));
-	if (t == 0)
-		return (0);
-	i = 0;
 	while (i < len)
 	{
 		t[i] = s[start + i];
 		i++;
 	}
-	t[i] = '\0';
-	return (t);
+	if(start <= n)
+		ft_strlcpy(t, s + start, len + 1);
+	return(t);
 }
-
-/*
-
-#include "libft.h"
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*new_str;
-
-	if (!s)
-		return (NULL);
-	if (ft_strlen(s) < len)
-		len = ft_strlen(s);
-	new_str = malloc((sizeof(char) * len) + 1);
-	if (start > ft_strlen(s))
-	{
-		*new_str = 0;
-		return (new_str);
-	}
-	if (new_str == NULL)
-		return (NULL);
-	if (start <= ft_strlen(s))
-		ft_strlcpy(new_str, s + start, len + 1);
-	return (new_str);
-
-
-*/
