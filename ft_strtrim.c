@@ -1,74 +1,77 @@
 #include "libft.h"
+#include <stdlib.h>
 
-/*
-Elimina los caracteres de [set] de el string [s1]
-	1)Comprobar que [set] no es NULL
-	2)Encontrar la primera instancia en que ocurre [set] y la 
-	ultima ([start] y [end])
-	2)Tener en cuenta que al mirar desde detrás cambia el orden de [set]
-	3)Asignar memoria para los caracteres entre [start] y [end]
-	4)Devuelve la string recortada. NULL si falla la reserva de memoria.
 
-*/
 
-char	*ft_strtrim(char const *s1, char const *set)
+
+
+size_t ft_strlen(const char *s)
 {
-	size_t	i;
+	int i;
 
-	if (!s1 || !set)
-		return (0);
 	i = 0;
-	while (ft_strchr(set, *s1) && s1[i] != 0)
+	while (s[i] != 0)
 		i++;
-	if (*s1 == '\0')
-		return (ft_strdup(""));
-	while (ft_strchr(set, s1[i]))
-		i--;
-	return (ft_substr(s1, 0, i + 1));
+	return (i);
 }
-
-
-
 /*
-
-
-#include "libft.h"
-
-static int	charset_check(char c, char const *set)
+char *ft_strchr(const char *s, int c)
 {
-	while (*set)
-		if (c == *set++)
-			return (1);
-	return (0);
-}
+	int i;
 
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	char			*c;
-	unsigned int	j;	
-	unsigned int	i;
-
-	if (!s1)
-		return (NULL);
-	if (!set)
-		return (ft_strdup(s1));
-	i = 0;
-	j = ft_strlen(s1);
-	while (charset_check(s1[i], set) == 1)
-		i++;
-	if (i == j)
+	i = ft_strlen(s);
+	if (c == '\0')
+		return((char *)s);
+	while(s)
 	{
-		c = ft_strdup("");
-		if (!c)
-			return (NULL);
-		else
-			return (c);
+		if (*s == (char)c)
+			return((char *)s);
+		s++;
 	}
-	while (charset_check(s1[j - 1], set) == 1)
-		j--;
-	c = ft_substr(s1, i, j - i);
-	return (c);
+	return(0);
+}
+
+char *ft_strtrim(char const *s1, char const *set)
+{
+	char *s2;
+	size_t i;
+	size_t j;
+	size_t len;
+
+	if(!s1 || !set)
+		return(0);
+	i = 0;
+	while(ft_strchr(set, s1[i]) && s1[i] != 0)
+		i++;
+	len = ft_strlen(s1);
+	while(ft_strchr(set, s1[len]) && len != 0)
+		len--;
+	s2 = malloc(sizeof(char) * (len - i + 1));
+	if(s2 == NULL)
+		return(s2);
+	j = 0;
+	while(i != len)
+	{
+		s2[j] = s1[i];
+		i++;
+		j++;
+	}
+	s2[j] = '\0';
+	return(s2);
+}
+
+*/
+
+
+#include <stdio.h>
+int main(void)
+{
+        char a[50] = "pepe al reves es epep";
+        char b[50] = "pepe";
+
+        printf("%s\n", ft_strtrim(a, b));
+        return(0);
 }
 
 
-*/
+

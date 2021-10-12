@@ -16,29 +16,29 @@ int	ft_atoi(const char *str)
 {
 	int	i;
 	int	r;
-	int	sol;
+	unsigned int	sol;
 
 	i = 0;
-	r = 0;
+	r = 1;
 	sol = 0;
 	while (str[i] == 32 || (str[i] > 8 && str[i] < 14))
 		i++;
 	while (str[i] == 45 || str[i] == 43)
 	{
 		if (str[i] == 45)
-			r--;
+			r = -1;
 		i++;
 	}
 	while (str[i] > 47 && str[i] < 58)
 	{
 		sol = sol * 10 + (str[i] - 48);
+		if (sol > 2147483657 && r == 1)
+			return (-1);
+		if (sol > 2147483648 && r == -1)
+			return(0); 
 		i++;
 	}
-	//poner en específico número máximo y número mínimo
-	
-	if ((r % 2) != 0)
-		sol = sol * (-1);
-	return (sol);
+	return (sol*r);
 }
 
 
