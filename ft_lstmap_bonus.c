@@ -1,34 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/14 10:52:47 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/10/28 12:12:14 by pdel-pin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-/*
-Iterar en [lst] aplicando [f] al contenido de cada elemento. 
-La aplicación correcta de [f] sobre cada elemento genera una nueva lista con estos
-	1)Comprobar [lst] y [f]
-	2)Inicializar una nueva lista [new_lst] en 0;
-	3)Iterar mientas [lst], comprobar si se ha aplicado la función
-	4)Ir añadiendo al final y enlazando con el siguiente elemento
-	5)Devueve la nueva lista
-
-*/
-
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *new_lst;
-	t_list *new_elem;
+	t_list	*new_lst;
+	t_list	*new_elem;
 
-	if (!lst && !f)
+	if (!lst || !f)
 		return (0);
 	new_lst = 0;
 	while (lst != 0)
 	{
-		if (!ft_lstnew(f(lst -> content)))
+		new_elem = ft_lstnew(f(lst -> content));
+		if (!new_elem)
 		{
-			new_elem = ft_lstnew(f(lst -> content));
-			ft_lstclear(&new_elem, (*del));
-			return(0);
+			ft_lstclear(&new_lst, del);
+			return (0);
 		}
-		ft_lstadd_back(&new_lst, ft_lstnew(f(lst -> content)));
+		ft_lstadd_back(&new_lst, new_elem);
 		lst = lst -> next;
 	}
-	return(new_lst);
+	return (new_lst);
 }

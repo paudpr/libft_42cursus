@@ -1,12 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 17:17:08 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/10/28 12:15:31 by pdel-pin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-/*
-Encuentra la primera ocurrencia de [needle]	en el string [haystack]
-	1)Avanzar por [haystack] mientras no superemos [len]
-	2)Devuelve un puntero al primer caracter de la primera ocurrencia de [needle]
-	o [haystack] si [needle] = 0, o [NULL] si [needle] no aparece en [haystack]
-
-*/
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -19,7 +23,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	while (len && haystack[i])
 	{
 		n = 0;
-		while (haystack[i + n] != 0 && haystack[i + n] == needle[n] && len - n > 0)
+		while (haystack[i + n] != 0
+			&& haystack[i + n] == needle[n] && len - n > 0)
 		{
 			if (needle[n + 1] == '\0')
 				return ((char *)&haystack[i]);

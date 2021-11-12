@@ -1,19 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 16:16:37 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/10/28 12:13:49 by pdel-pin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-/*
-Escribe el dígito [n] en [fd]
-	1)Comprobar si [n] es 0, -21477483648. Escribir de forma particular
-	2)Comprobar si [n] es < 0. Escribir signo de forma particular
-	3)Avanzar por [n] mientras es > 0 asignando dígitos a espacios del string
-	4)Imprimir el string desde atras y retrocediendo en índices
-
-*/
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	char	c[10];
-
 	if (n == 0)
 		return (ft_putchar_fd('0', fd));
 	if (n == -2147483648)
@@ -23,14 +23,13 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		n *= -1;
 	}
-	i = 0;
-	while (n > 0)
+	if (n >= 10)
 	{
-		c[i] = n % 10 + '0';
-		n = n / 10;
-		i++;
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
 	}
-	i--;
-	while (i >= 0)
-		ft_putchar_fd(c[i--], fd);
+	else
+	{
+		ft_putchar_fd(n + 48, fd);
+	}
 }

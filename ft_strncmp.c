@@ -1,17 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 17:13:04 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/10/28 12:15:23 by pdel-pin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-/*
-Compara [s1] y [s2]
-	1)Recorre ambos strings hasta encontrar una diferencia
-	2)Devuelve la diferencia entre primer caracter distinto entre strings, 
-	0 si son iguales
-
-*/
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
-	
+
 	if (n == 0)
 		return (0);
 	i = 0;
@@ -24,23 +28,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
-
-
-/*
-#include <string.h>
-#include <stdio.h>
-int main(void)
-{
-	char *s1 = "atoms\0\0\0";
-	char *s2 = "atoms\0abc";
-	int a1;
-	int a2;
-
-	a1 = strncmp (s1, s2, 8);
-	a2 = ft_strncmp( s1, s2, 8);
-
-	printf("%d\n", a1);
-	printf("%d\n", a2);
-}
-*/

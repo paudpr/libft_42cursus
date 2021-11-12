@@ -1,18 +1,22 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 14:07:39 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/10/28 12:09:35 by pdel-pin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-/*
-Asigna memoria a un array con [count] elementos de tamaño [size] cada uno
-	1)Devuelve un puntero a la memoria almacenada. Si la asignación de memoria falla
-	devuelve un NULL
-	2)Ponemos a 0 todos los espacios
-	
-*/
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
-	ptr = (void *)malloc(count * size);
+	ptr = malloc(count * size);
 	if (ptr == NULL)
 		return (ptr);
 	ft_bzero(ptr, (count * size));

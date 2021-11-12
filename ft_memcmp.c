@@ -1,12 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 15:12:02 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/10/28 12:12:47 by pdel-pin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-/*
-Compara los strings de bytes [s1] y [s2] 
-	1)Recorre ambos strings hasta [n]
-	2)Devuelve la diferencia en entre los primeros bytes diferentes encontrado,
-	0 si son iguales
-
-*/
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -18,5 +22,5 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		s2++;
 		n--;
 	}
-	return (0);	
+	return (0);
 }

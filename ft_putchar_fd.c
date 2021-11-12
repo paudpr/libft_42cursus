@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 17:27:54 by pdel-pin          #+#    #+#             */
-/*   Updated: 2021/10/28 12:15:35 by pdel-pin         ###   ########.fr       */
+/*   Created: 2021/10/15 16:15:02 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/10/28 12:13:41 by pdel-pin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	int	n;
-
-	n = ft_strlen(s);
-	if (c == '\0')
-		return ((char *)&s[n]);
-	while (n >= 0)
-	{	
-		if (s[n] == (char)c)
-			return ((char *)&s[n]);
-		n--;
-	}
-	return ((char *) '\0');
+	write(fd, &c, 1);
 }

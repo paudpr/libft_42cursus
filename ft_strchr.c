@@ -1,13 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 16:36:22 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/10/28 12:14:42 by pdel-pin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-/*
-Encuentra el primer caracter con valor [c] en el string [s]
-	1)Comprueba que no sea el valor '\0'
-	1)Recorre [s] guardando el índice hasta encontrar la primera ocurrencia del
-	caracter
-	2)Devuelve índice guardado o NULL si [c] no encontrado
-
-*/
 
 char	*ft_strchr(const char *s, int c)
 {

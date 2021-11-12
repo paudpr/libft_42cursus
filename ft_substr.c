@@ -1,41 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 17:41:13 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/11/12 11:11:09 by pdel-pin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-/*
-Copia una string [s] desde un índice [start] con longitud máxima de [len]
-	1)Comprueba que [len] != 0, o devuelve NULL
-	2)El tamaño de [s] ha de ser >= que [start] o devuelve string vacío
-	3)Recorrer y asignar al string creado [s] desde [start] y terminar en '\0'
-	4)Devuelve el string creado. Null si la reserva de memoria falla
-
-*/
-
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*t;
-	unsigned int		n;
-	size_t		i;
+	char	*s1;
+	size_t	i;
 
 	if (!s)
 		return (0);
-	n = ft_strlen(s);
-	if (n < len)
-		len = n;
-	t = malloc(sizeof(char) * (len +1));
-	if (t == NULL)
-		return (t);
-	i = 0;
-	if (n < start)
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
+	s1 = malloc(sizeof(char) * (len + 1));
+	if (s1 == NULL)
+		return (s1);
+	if (start > ft_strlen(s))
 	{
-		t[i] = 0;
-		return(t);
+		s1[0] = '\0';
+		return (s1);
 	}
+	i = 0;
 	while (i < len)
 	{
-		t[i] = s[start + i];
+		s1[i] = s[start + i];
 		i++;
 	}
-	if(start <= n)
-		ft_strlcpy(t, s + start, len + 1);
-	return(t);
+	s1[i] = '\0';
+	return (s1);
 }

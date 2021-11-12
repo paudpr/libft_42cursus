@@ -1,16 +1,29 @@
-#ifndef		LIBFT_H
-#define		LIBFT_H
-#include	<stdlib.h>
-#include	<unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/12 16:05:41 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/10/28 12:16:00 by pdel-pin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef LIBFT_H
+# define LIBFT_H
+
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
-	void *content;
-	struct s_list *next;
+	void			*content;
+	struct s_list	*next;
 }t_list;
 
 /*
-Parte 1
+1st part
 */
 
 int		ft_isalpha(int c);
@@ -38,7 +51,7 @@ void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 
 /*
-Parte 2
+2nd part
 */
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -54,7 +67,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 /*
-Parte bonus
+Bonus part
 */
 
 t_list	*ft_lstnew(void *content);

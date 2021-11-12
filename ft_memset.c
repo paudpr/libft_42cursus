@@ -1,11 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 16:10:22 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/10/28 12:13:21 by pdel-pin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-/*
-Escribe [len] bytes de valor [c] en la string [b]
-	1)Por [len] veces asigna el valor [c] a [b] y avanza por [b] y [len]
-	2)Devuelve [b]
-
-*/
 
 void	*ft_memset(void *b, int c, size_t len)
 {

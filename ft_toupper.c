@@ -1,10 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 17:47:26 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/11/12 11:11:17 by pdel-pin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-/*
-Transforma caracteres en minúscula de un string en caracteres en mayúscula
-	1)Transformación en ascii
-
-*/
 
 int	ft_toupper(int c)
 {

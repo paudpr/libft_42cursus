@@ -1,40 +1,54 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 17:17:08 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/10/28 12:15:39 by pdel-pin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-/*
-Elimina los caracteres de [set] de el string [s1]
-	1)Comprobar que [set] no es NULL
-	2)Encontrar la primera instancia en que ocurre [set] y la 
-	ultima ([start] y [end])
-	2)Tener en cuenta que al mirar desde detrás cambia el orden de [set]
-	3)Asignar memoria para los caracteres entre [start] y [end]
-	4)Devuelve la string recortada. NULL si falla la reserva de memoria.
-
-*/
-
-char *ft_strtrim(char const *s1, char const *set)
+static char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	char *s2;
-	size_t i;
-	size_t j;
-	size_t len;
-	if(!s1 || !set)
-		return(0);
+	size_t	i;
+
 	i = 0;
-	while(ft_strchr(set, s1[i]) && s1[i] != 0)
-		i++;
-	len = ft_strlen(s1);
-	while(ft_strchr(set, s1[len]) && len != 0)
-		len--;
-	s2 = malloc(sizeof(char) * (len - i + 1));
-	if(s2 == NULL)
-		return(s2);
-	j = 0;
-	while(i != len)
+	while (src[i] && i < n)
 	{
-		s2[j] = s1[i];
+		dest[i] = src[i];
 		i++;
-		j++;
 	}
-	s2[j] = '\0';
-	return(s2);
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	i;
+	size_t	j;
+	char	*sresult;
+
+	i = 0;
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	while (s1[i] && ft_strchr(set, s1[i]))
+		i++;
+	j = ft_strlen(s1 + i);
+	if (j)
+		while (s1[j + i - 1] != 0 && ft_strchr(set, s1[i + j - 1]) != 0)
+			j--;
+	sresult = malloc(sizeof(char) * j + 1);
+	if (!sresult)
+		return (NULL);
+	ft_strncpy(sresult, s1 + i, j);
+	sresult[j] = '\0';
+	return (sresult);
 }

@@ -1,11 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 18:54:14 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/10/28 12:13:45 by pdel-pin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-/*
-Escribe el string [s] en el directorio [fd]
-	1)Recorrer [s] escribiendo [s[i]] en [fd]
-	2)Anadir el ['\n'] al final en [fd]
-
-*/
 
 void	ft_putendl_fd(char *s, int fd)
 {

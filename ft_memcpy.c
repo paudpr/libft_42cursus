@@ -1,11 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 15:14:19 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/10/28 12:12:56 by pdel-pin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-/*
-Copia [n] bytes desde la memoria a que apunta [src] a la memoria que apunta [dst]
-	1)Recorre [src] igualando su valor a [dst]
-	2)Devuelve [dst]
-
-*/
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

@@ -1,10 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 16:22:13 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/10/28 12:13:54 by pdel-pin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-/*
-Escribimos la cadena [s] en el directorio [fd]
-	1)Avanzar por [s] escribiendo [s[i]] en [fd]
-
-*/
 
 void	ft_putstr_fd(char *s, int fd)
 {

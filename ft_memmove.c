@@ -1,11 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/13 13:12:26 by pdel-pin          #+#    #+#             */
+/*   Updated: 2021/10/28 12:13:02 by pdel-pin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-/*
-Copia [len] bytes de [src] a [dst]. Ambas strings pueden superponerse
-	1)Avanzamos por la cadena hasta [n] igualando [dst] con [src]
-	2)Devuelve [dst]
-	
-*/
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -20,42 +25,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		d += len;
 		s += len;
-		while (len > 0)
-		{
-			*(unsigned char *)--d = *(unsigned char *)--s;
-			len--;
-		}
-	}
-	else
-	{
-		while (len > 0)
-		{
-			*(unsigned char *)d = *(unsigned char *)s;
-			d++;
-			s++;
-			len--;
-		}
-	}
-	return (dst);
-}
-
-/*
-
-#include "libft.h"
-
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	char		*d;
-	const char	*s;
-
-	d = dst;
-	s = src;
-	if (!dst && !src)
-		return (NULL);
-	if (s < d)
-	{
-		d += len;
-		s += len;
 		while (len--)
 			*(unsigned char *)--d = *(unsigned char *)--s;
 	}
@@ -70,5 +39,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-
-*/

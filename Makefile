@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/10/15 17:17:08 by pdel-pin          #+#    #+#              #
+#    Updated: 2021/10/28 12:16:05 by pdel-pin         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME	=	libft.a
 
 SRCS	=	ft_isalpha.c \
@@ -30,7 +42,7 @@ SRCS	=	ft_isalpha.c \
 		ft_itoa.c \
 		ft_strmapi.c \
 		ft_striteri.c \
-		ft_putchar_ft.c \
+		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
