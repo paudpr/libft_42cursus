@@ -6,7 +6,7 @@
 #    By: pdel-pin <pdel-pin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/15 17:17:08 by pdel-pin          #+#    #+#              #
-#    Updated: 2021/10/28 12:16:05 by pdel-pin         ###   ########.fr        #
+#    Updated: 2022/10/17 13:03:05 by pdel-pin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,4 +85,4 @@ fclean: clean
 
 re: fclean all
 
-PHONY.: all clean fclean re
+.PHONY: all clean fclean re
