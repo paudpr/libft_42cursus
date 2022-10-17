@@ -4,8 +4,8 @@
 
 ## Table of contents 📑
 - [Status](#status)
-- [About the project👩‍💻](#about-the-project👩‍💻)
-    * [Project boundaries🔧](#project-boundaries🔧)
+- [About the project](#about-the-project)
+    * [Project boundaries](#project-boundaries)
 - [How to use](#how-to-use)
 
 ## Status ✔️
